@@ -50,7 +50,8 @@ export const PitchCanvas: React.FC<PitchCanvasProps> = ({
 
   // Scorer flash overlays
   const [goalOverlay, setGoalOverlay] = useState<Team | null>(null);
-  const [ticks, setTicks] = useState(0);
+  const goalScoredRef = useRef(false);
+  const ticksRef = useRef(0);
 
   // Constants
   const CANVAS_WIDTH = 1000;
@@ -444,29 +445,32 @@ export const PitchCanvas: React.FC<PitchCanvasProps> = ({
 
   // Goal scorer netting checks
   const checkGoalScored = (ball: Ball) => {
-    if (goalOverlay) return;
+    if (goalScoredRef.current) return;
 
     const GOAL_TOP = 250;
     const GOAL_BOTTOM = 350;
 
-    // Left goal line (red scored)
     if (ball.x <= 15 && ball.y >= GOAL_TOP && ball.y <= GOAL_BOTTOM) {
       triggerGoal('red');
+      return;
     }
 
-    // Right goal line (blue scored)
     if (ball.x >= CANVAS_WIDTH - 15 && ball.y >= GOAL_TOP && ball.y <= GOAL_BOTTOM) {
       triggerGoal('blue');
+      return;
     }
   };
 
   const triggerGoal = (scorer: Team) => {
+    if (goalScoredRef.current) return;
+    goalScoredRef.current = true;
+
     setGoalOverlay(scorer);
     sound.playGoal();
     onGoal(scorer);
 
-    // Freeze game for 2 seconds to celebrate, then kickoff
     setTimeout(() => {
+      goalScoredRef.current = false;
       setGoalOverlay(null);
       performKickoff(scorer === 'blue' ? 'red' : 'blue');
     }, 2000);
@@ -556,7 +560,7 @@ export const PitchCanvas: React.FC<PitchCanvasProps> = ({
         aiPlayer.x -= aiPlayer.speed;
         
         // Weave slightly vertically using sine curve to bypass user tackles
-        aiPlayer.y += Math.sin(ticks / 15 + idx) * 0.55;
+        aiPlayer.y += Math.sin(ticksRef.current / 15 + idx) * 0.55;
 
         // Shoot if inside strike zone (X < 420)
         const distToGoal = Math.sqrt((aiPlayer.x - 20) ** 2 + (aiPlayer.y - 300) ** 2);
@@ -822,7 +826,7 @@ export const PitchCanvas: React.FC<PitchCanvasProps> = ({
         return;
       }
 
-      setTicks((prev) => prev + 1);
+      ticksRef.current++;
 
       // 1. Move User Player
       userTeamRef.current.forEach((player, i) =>
