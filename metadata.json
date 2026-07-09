@@ -1,0 +1,6 @@
+{
+  "name": "Pocket Football",
+  "description": "A retro 2D physics-based 5-on-5 football (soccer) game with a customizable difficulty, responsive D-pad controls, pass/tackle/shoot actions, and teammate AI support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
