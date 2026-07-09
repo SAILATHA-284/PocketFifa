@@ -81,11 +81,11 @@ export const PitchCanvas: React.FC<PitchCanvasProps> = ({
   const getDifficultySettings = () => {
     switch (difficulty) {
       case 'easy':
-        return { aiSpeed: 1.25, aiPassChance: 0.002, aiTackleRange: 20, aiReactionError: 30 };
+        return { aiSpeed: 1.6, aiPassChance: 0.003, aiTackleRange: 22, aiReactionError: 15 };
       case 'medium':
-        return { aiSpeed: 1.75, aiPassChance: 0.004, aiTackleRange: 23, aiReactionError: 15 };
+        return { aiSpeed: 1.9, aiPassChance: 0.004, aiTackleRange: 23, aiReactionError: 10 };
       case 'hard':
-        return { aiSpeed: 2.25, aiPassChance: 0.008, aiTackleRange: 27, aiReactionError: 2 };
+        return { aiSpeed: 2.25, aiPassChance: 0.009, aiTackleRange: 27, aiReactionError: 2 };
     }
   };
 

@@ -63,7 +63,7 @@ export const Scoreboard: React.FC<ScoreboardProps> = ({
         {/* User Team */}
         <div className="flex items-center gap-2 md:gap-4 flex-1 justify-end">
           <div className="text-right">
-            <h2 className="text-sm md:text-lg font-bold tracking-wide">USER FC</h2>
+            <h2 className="text-sm md:text-lg font-bold tracking-wide">PLAYER FC</h2>
             <p className="text-[10px] text-blue-400 uppercase tracking-widest font-semibold hidden md:block">
               Host Team
             </p>
@@ -92,7 +92,7 @@ export const Scoreboard: React.FC<ScoreboardProps> = ({
           {/* Red team dot */}
           <div className="w-3.5 h-3.5 rounded-full bg-red-500 border border-white shadow-sm shadow-red-500/50" />
           <div>
-            <h2 className="text-sm md:text-lg font-bold tracking-wide">AI FC</h2>
+            <h2 className="text-sm md:text-lg font-bold tracking-wide">BOT FC</h2>
             <p className="text-[10px] text-red-400 uppercase tracking-widest font-semibold hidden md:block">
               Guest Team
             </p>

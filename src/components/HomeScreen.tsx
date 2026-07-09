@@ -24,13 +24,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         className="text-center mb-8"
       >
         <span className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-3">
-          <Sparkles size={14} className="animate-pulse" /> Retro Arcade Football
+          <Sparkles size={14} className="animate-pulse" /> Retro Arcade
         </span>
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
           ⚽ POCKET <span className="text-emerald-400">FOOTBALL</span>
         </h1>
         <p className="text-emerald-200/60 mt-2 text-sm md:text-base max-w-md mx-auto">
-          Fast-paced, physics-based 5-on-5 action. Dribble, pass, tackle, and strike your way to victory!
+          Pass, tackle, and strike your way to victory!
         </p>
       </motion.div>
 

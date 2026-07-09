@@ -147,8 +147,8 @@ export default function App() {
             />
 
             {/* Game Canvas container */}
-            <div className="flex-1 flex items-center justify-center bg-slate-950/40 p-4 md:p-6">
-              <div className="w-full max-w-5xl relative">
+            <div className="flex-1 flex items-center justify-center bg-slate-950/40 px-1 py-1 md:p-3">
+  <div className="w-full max-w-6xl relative">
                 <PitchCanvas
                   difficulty={difficulty}
                   isPaused={isPaused}

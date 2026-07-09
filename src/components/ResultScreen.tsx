@@ -23,9 +23,9 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
   const isDraw = userScore === aiScore;
 
   const getMatchVerdict = () => {
-    if (isUserWinner) return '🏆 USER FC VICTORIOUS';
-    if (isAIWinner) return '🤖 AI FC TRIUMPHS';
-    return '🤝 DRAMATIC STALEMATE';
+    if (isUserWinner) return '🏆 YOU WIN :)!';
+    if (isAIWinner) return '🤖 BOT FC WINS!';
+    return '🤝 DRAW!';
   };
 
   const getSubCommentary = () => {
