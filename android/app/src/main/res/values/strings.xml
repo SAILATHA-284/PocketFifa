@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pocket Football</string>
+    <string name="title_activity_main">Pocket Football</string>
+    <string name="package_name">com.sai.pocketfootball</string>
+    <string name="custom_url_scheme">com.sai.pocketfootball</string>
+</resources>
